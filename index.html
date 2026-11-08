@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f6f5f1">
 
-<title>Mr. Abhi | Personal Website</title>
-<meta name="description" content="The official personal website of Abhijith S. Ideas, perspectives, adventures, creative work and possibilities.">
+<title>Abhi | Personal Website</title>
+<meta name="description" content="The official personal website of Abhijith S (Abhi). Ideas, perspectives, adventures, creative work and possibilities.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +24,15 @@
   --sans: "DM Sans", Arial, sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--bg);
@@ -35,9 +41,22 @@ body {
   line-height: 1.7;
 }
 
-a { color: inherit; text-decoration: none; }
+body.modal-open {
+  overflow: hidden;
+}
 
-img { display: block; width: 100%; object-fit: cover; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* HEADER */
 
 header {
   height: 84px;
@@ -59,7 +78,11 @@ header {
   letter-spacing: -1px;
 }
 
-nav { display: flex; align-items: center; gap: 32px; }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
 
 nav a {
   font-size: 12px;
@@ -67,7 +90,9 @@ nav a {
   transition: color .2s;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover {
+  color: var(--accent);
+}
 
 .nav-contact {
   border: 1px solid var(--ink);
@@ -82,6 +107,8 @@ nav a:hover { color: var(--accent); }
   font-size: 25px;
   cursor: pointer;
 }
+
+/* HERO */
 
 .hero {
   min-height: 650px;
@@ -141,7 +168,9 @@ nav a:hover { color: var(--accent); }
   transition: .25s;
 }
 
-.btn:hover { background: var(--accent); }
+.btn:hover {
+  background: var(--accent);
+}
 
 .text-link {
   font-size: 12px;
@@ -149,9 +178,22 @@ nav a:hover { color: var(--accent); }
   padding-bottom: 5px;
 }
 
+/* CLICKABLE PHOTOGRAPHS */
+
+.image-trigger {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+}
+
 .hero-image {
   height: 460px;
-  position: relative;
   overflow: hidden;
   background: #e8e3d9;
 }
@@ -162,7 +204,9 @@ nav a:hover { color: var(--accent); }
   transition: transform .6s;
 }
 
-.hero-image:hover img { transform: scale(1.035); }
+.hero-image:hover img {
+  transform: scale(1.035);
+}
 
 .image-caption {
   position: absolute;
@@ -173,6 +217,26 @@ nav a:hover { color: var(--accent); }
   letter-spacing: 2px;
   text-shadow: 0 1px 8px #333;
 }
+
+.image-hint {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(23,23,20,.75);
+  color: white;
+  padding: 7px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.image-trigger:hover .image-hint,
+.image-trigger:focus-visible .image-hint {
+  opacity: 1;
+}
+
+/* GENERAL SECTIONS */
 
 section {
   padding: 105px 8%;
@@ -201,6 +265,8 @@ section {
   font-weight: 500;
   margin-bottom: 25px;
 }
+
+/* ABOUT */
 
 .about-grid {
   display: grid;
@@ -235,6 +301,8 @@ section {
   font-size: 21px;
   font-style: italic;
 }
+
+/* INTERESTS */
 
 .interests {
   background: #eeece5;
@@ -277,6 +345,8 @@ section {
   color: var(--muted);
 }
 
+/* GALLERY */
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -294,9 +364,13 @@ section {
   transition: transform .6s;
 }
 
-.gallery-card:hover img { transform: scale(1.035); }
+.gallery-card:hover img {
+  transform: scale(1.035);
+}
 
-.gallery-info { padding: 19px 21px 22px; }
+.gallery-info {
+  padding: 19px 21px 22px;
+}
 
 .gallery-info h3 {
   font-family: var(--serif);
@@ -310,7 +384,11 @@ section {
   margin-top: 4px;
 }
 
-.social-section { background: #eeece5; }
+/* SOCIALS */
+
+.social-section {
+  background: #eeece5;
+}
 
 .social-grid {
   display: grid;
@@ -347,18 +425,25 @@ section {
   font-size: 12px;
 }
 
+/* CONTACT */
+
 .contact-section {
   text-align: center;
   padding: 120px 8%;
 }
 
-.contact-section .section-title { max-width: 650px; margin: auto; }
+.contact-section .section-title {
+  max-width: 650px;
+  margin: auto;
+}
 
 .contact-section p {
   color: var(--muted);
   font-size: 13px;
   margin: 20px auto 30px;
 }
+
+/* FOOTER */
 
 footer {
   border-top: 1px solid var(--line);
@@ -371,12 +456,106 @@ footer {
   font-size: 11px;
 }
 
-footer strong { color: var(--ink); }
+footer strong {
+  color: var(--ink);
+}
+
+/* MONEY POPUP */
+
+.money-modal[hidden] {
+  display: none;
+}
+
+.money-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20,20,18,.82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(7px);
+}
+
+.money-content {
+  position: relative;
+  background: var(--bg);
+  width: 100%;
+  max-width: 570px;
+  padding: 65px 45px;
+  text-align: center;
+  animation: modalAppear .35s ease;
+}
+
+.money-close {
+  position: absolute;
+  top: 14px;
+  right: 19px;
+  background: none;
+  border: none;
+  font-size: 27px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.money-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.money-title {
+  font-family: var(--serif);
+  font-size: clamp(55px, 10vw, 85px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.money-meaning {
+  font-family: var(--serif);
+  font-size: clamp(19px, 4vw, 25px);
+  line-height: 2;
+}
+
+.money-meaning span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.money-bottom {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
 
 @media(max-width: 760px) {
-  header { height: 70px; padding: 0 6%; }
 
-  .menu-toggle { display: block; }
+  header {
+    height: 70px;
+    padding: 0 6%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 
   nav {
     display: none;
@@ -392,7 +571,9 @@ footer strong { color: var(--ink); }
     gap: 20px;
   }
 
-  nav.active { display: flex; }
+  nav.active {
+    display: flex;
+  }
 
   .hero {
     grid-template-columns: 1fr;
@@ -400,40 +581,79 @@ footer strong { color: var(--ink); }
     gap: 45px;
   }
 
-  .hero h1 { font-size: 52px; }
+  .hero h1 {
+    font-size: 52px;
+  }
 
-  .hero-image { height: 400px; }
+  .hero-image {
+    height: 400px;
+  }
 
-  section { padding: 75px 7%; }
+  section {
+    padding: 75px 7%;
+  }
 
-  .about-grid { grid-template-columns: 1fr; gap: 35px; }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
 
-  .about-photo { height: 420px; }
+  .about-photo {
+    height: 420px;
+  }
 
-  .interest-grid, .social-grid { grid-template-columns: 1fr; }
+  .interest-grid,
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .gallery-card img { height: 350px; }
+  .gallery-card img {
+    height: 350px;
+  }
 
-  .contact-section { padding: 85px 7%; }
+  .contact-section {
+    padding: 85px 7%;
+  }
 
-  footer { padding: 25px 7%; }
+  footer {
+    padding: 25px 7%;
+  }
+
+  .money-content {
+    padding: 65px 22px;
+  }
 }
 
 @media(max-width: 380px) {
-  .hero h1 { font-size: 43px; }
-  .hero-image { height: 330px; }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-image {
+    height: 330px;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <a class="logo" href="#home">MR. ABHI.</a>
+<!-- HEADER -->
 
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+<header>
+
+  <a class="logo" href="#home">ABHI.</a>
+
+  <button class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          onclick="toggleMenu()">☰</button>
 
   <nav id="navigation">
     <a href="#home" onclick="closeMenu()">Home</a>
@@ -442,13 +662,17 @@ footer strong { color: var(--ink); }
     <a href="#socials" onclick="closeMenu()">Socials</a>
     <a href="#contact" class="nav-contact" onclick="closeMenu()">Get in touch ↗</a>
   </nav>
+
 </header>
 
 <main>
 
 <!-- HERO -->
+
 <div class="hero" id="home">
+
   <div>
+
     <div class="eyebrow">Personal Brand · Digital Space</div>
 
     <h1>
@@ -467,34 +691,56 @@ footer strong { color: var(--ink); }
       <a href="#about" class="btn">Discover my story ↗</a>
       <a href="#socials" class="text-link">Find me online</a>
     </div>
+
   </div>
 
-  <div class="hero-image">
+  <button class="image-trigger hero-image"
+          type="button"
+          onclick="openMoney()"
+          aria-label="Discover the meaning of MONEY">
+
     <img src="Image/mr-abhi-office.jpg"
-         alt="Abhijith at his workplace"
+         alt="Abhi at his workplace"
          fetchpriority="high">
+
     <div class="image-caption">THINK · CREATE · EXPLORE</div>
-  </div>
+    <span class="image-hint">CLICK TO DISCOVER ↗</span>
+
+  </button>
+
 </div>
 
 <!-- ABOUT -->
+
 <section id="about">
+
   <div class="section-inner">
+
     <div class="section-label">01 — The person behind the name</div>
 
     <div class="about-grid">
-      <div class="about-photo">
+
+      <button class="image-trigger about-photo"
+              type="button"
+              onclick="openMoney()"
+              aria-label="Discover the meaning of MONEY">
+
         <img src="Image/mr-abhi-with-cat.jpg"
-             alt="Abhijith with his cat"
+             alt="Abhi with his cat"
              loading="lazy">
-      </div>
+
+        <span class="image-hint">CLICK TO DISCOVER ↗</span>
+
+      </button>
 
       <div class="about-copy">
+
         <h2 class="section-title">A little about me.</h2>
 
         <p>
-          I'm Abhijith S. An individual driven by curiosity,
-          creativity and the desire to explore possibilities
+          I'm Abhijith S. You can call me Abhi.
+          I'm an individual driven by curiosity, creativity
+          and the desire to explore possibilities
           beyond the ordinary.
         </p>
 
@@ -514,14 +760,21 @@ footer strong { color: var(--ink); }
         <div class="about-note">
           "Think independently. Keep exploring. Build something meaningful."
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- INTERESTS -->
+
 <section class="interests" id="interests">
+
   <div class="section-inner">
+
     <div class="section-label">02 — Beyond the everyday</div>
 
     <h2 class="section-title">Things that interest me.</h2>
@@ -531,6 +784,7 @@ footer strong { color: var(--ink); }
     </p>
 
     <div class="interest-grid">
+
       <div class="interest-card">
         <span class="interest-number">01 / ENGINEERING</span>
         <h3>Technology & Engineering</h3>
@@ -548,13 +802,19 @@ footer strong { color: var(--ink); }
         <h3>Digital Creativity</h3>
         <p>Creating, experimenting and expressing ideas through digital platforms.</p>
       </div>
+
     </div>
+
   </div>
+
 </section>
 
 <!-- GALLERY -->
+
 <section id="gallery">
+
   <div class="section-inner">
+
     <div class="section-label">03 — Moments & memories</div>
 
     <h2 class="section-title">A glimpse into my world.</h2>
@@ -566,32 +826,43 @@ footer strong { color: var(--ink); }
     <div class="gallery-grid">
 
       <div class="gallery-card">
+
         <img src="Image/mr-abhi-motorcycle-trip.jpg"
-             alt="Abhijith on a motorcycle adventure"
+             alt="Abhi on a motorcycle adventure"
              loading="lazy">
+
         <div class="gallery-info">
           <h3>On the road</h3>
           <p>Travel · Motorcycling · Exploration</p>
         </div>
+
       </div>
 
       <div class="gallery-card">
+
         <img src="Image/mr-abhi-river-trip.jpg"
-             alt="Abhijith enjoying a river trip"
+             alt="Abhi enjoying a river trip"
              loading="lazy">
+
         <div class="gallery-info">
           <h3>Chasing perspectives</h3>
           <p>Nature · Travel · Experiences</p>
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- SOCIALS -->
+
 <section class="social-section" id="socials">
+
   <div class="section-inner">
+
     <div class="section-label">04 — Find me online</div>
 
     <h2 class="section-title">Let's connect.</h2>
@@ -604,37 +875,52 @@ footer strong { color: var(--ink); }
 
       <a class="social-card"
          href="https://www.instagram.com/ap_appuzz946/"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <h3>Instagram</h3>
         <p>Personal moments, travel and everyday experiences.</p>
         <span class="social-arrow">Explore profile ↗</span>
+
       </a>
 
       <a class="social-card"
          href="https://www.linkedin.com/in/abhijithshibunair/"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <h3>LinkedIn</h3>
         <p>Professional background, engineering and networking.</p>
         <span class="social-arrow">Connect with me ↗</span>
+
       </a>
 
       <a class="social-card"
          href="https://www.youtube.com/@Mr.AbhijithS"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <h3>YouTube</h3>
         <p>Videos, creativity and experiences worth sharing.</p>
         <span class="social-arrow">Visit channel ↗</span>
+
       </a>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact-section" id="contact">
+
   <div class="section-label">05 — Open to possibilities</div>
 
-  <h2 class="section-title">Have an idea? Let's make something happen.</h2>
+  <h2 class="section-title">
+    Have an idea? Let's make something happen.
+  </h2>
 
   <p>
     For collaborations, professional opportunities or interesting conversations,
@@ -642,31 +928,151 @@ footer strong { color: var(--ink); }
   </p>
 
   <a href="https://www.linkedin.com/in/abhijithshibunair/"
-     target="_blank" rel="noopener noreferrer"
+     target="_blank"
+     rel="noopener noreferrer"
      class="btn">Connect on LinkedIn ↗</a>
+
 </section>
 
 </main>
 
+<!-- MONEY POPUP -->
+
+<div class="money-modal"
+     id="moneyModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="moneyTitle"
+     hidden
+     onclick="handleModalClick(event)">
+
+  <div class="money-content">
+
+    <button class="money-close"
+            type="button"
+            onclick="closeMoney()"
+            aria-label="Close popup">×</button>
+
+    <div class="money-label">A little philosophy</div>
+
+    <h2 class="money-title" id="moneyTitle">MONEY.</h2>
+
+    <div class="money-meaning">
+      <span>M</span>ove<br>
+      <span>O</span>nward<br>
+      <span>N</span>ever<br>
+      <span>E</span>nd<br>
+      <span>Y</span>our journey.
+    </div>
+
+    <div class="money-bottom">
+      KEEP MOVING · KEEP BUILDING
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
 <footer>
-  <div><strong>MR. ABHI.</strong> &nbsp; Personal Digital Space</div>
-  <div>© <span id="year"></span> Abhijith S. All rights reserved.</div>
+
+  <div>
+    <strong>ABHI.</strong> &nbsp; Personal Digital Space
+  </div>
+
+  <div>
+    © <span id="year"></span> Abhijith S. All rights reserved.
+  </div>
+
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
 function toggleMenu() {
+
   const nav = document.getElementById("navigation");
   const button = document.querySelector(".menu-toggle");
+
   nav.classList.toggle("active");
-  button.setAttribute("aria-expanded", nav.classList.contains("active"));
+
+  button.setAttribute(
+    "aria-expanded",
+    nav.classList.contains("active")
+  );
+
 }
 
 function closeMenu() {
+
   document.getElementById("navigation").classList.remove("active");
-  document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
+
+  document.querySelector(".menu-toggle").setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// MONEY POPUP
+
+let previousFocus = null;
+
+function openMoney() {
+
+  const modal = document.getElementById("moneyModal");
+
+  previousFocus = document.activeElement;
+
+  modal.hidden = false;
+
+  document.body.classList.add("modal-open");
+
+  modal.querySelector(".money-close").focus();
+
+}
+
+function closeMoney() {
+
+  const modal = document.getElementById("moneyModal");
+
+  modal.hidden = true;
+
+  document.body.classList.remove("modal-open");
+
+  if (previousFocus) {
+    previousFocus.focus();
+  }
+
+}
+
+function handleModalClick(event) {
+
+  if (event.target === document.getElementById("moneyModal")) {
+    closeMoney();
+  }
+
+}
+
+// CLOSE POPUP USING ESCAPE KEY
+
+document.addEventListener("keydown", function(event) {
+
+  const modal = document.getElementById("moneyModal");
+
+  if (event.key === "Escape" && !modal.hidden) {
+    closeMoney();
+  }
+
+});
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 </script>
 
 </body>
